@@ -1,0 +1,5 @@
+Component: main
+Origin: zengolfer
+Label: zengolfer Debian Repository
+Architecture: amd64
+Description: zengolfer personal Debian package repository

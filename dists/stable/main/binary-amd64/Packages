@@ -1,0 +1,17 @@
+Package: bitchx
+Version: 1.2.1-1
+Architecture: amd64
+Maintainer: Nye Liu <nyet@nyet.org>
+Installed-Size: 3919
+Depends: libc6 (>= 2.38), libcrypt1 (>= 1:4.1.0), libssl3t64 (>= 3.0.0), libtinfo6 (>= 6)
+Homepage: https://sourceforge.net/projects/bitchx/
+Priority: optional
+Section: net
+Filename: pool/main/b/bitchx/bitchx_1.2.1-1_amd64.deb
+Size: 1466700
+SHA256: 0f75d2db47e21da3f751baf5e3b873ee7ff83d37fa472db38fe0b00e5a65a3d5
+SHA1: 137708126a723aa7951a878c37ba59a464428a6b
+MD5sum: da45f32007d8b4ba5a3ca5017652dcfa
+Description: terminal based IRC client
+ BitchX (ircii-pana) is a terminal based IRC client for UNIX systems.
+

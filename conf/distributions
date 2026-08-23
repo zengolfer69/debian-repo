@@ -1,0 +1,7 @@
+Origin: zengolfer
+Label: zengolfer Debian Repository
+Codename: stable
+Architectures: amd64
+Components: main
+Description: zengolfer personal Debian package repository
+SignWith: BB9FFAF259BAB02E

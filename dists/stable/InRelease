@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: zengolfer
+Label: zengolfer Debian Repository
+Codename: stable
+Date: Sun, 23 Aug 2026 20:19:02 UTC
+Architectures: amd64
+Components: main
+Description: zengolfer personal Debian package repository
+MD5Sum:
+ 5c106dd36448c8d131322f3ef024aa44 622 main/binary-amd64/Packages
+ a6758901349e9a53e742eded3bc5d5b3 443 main/binary-amd64/Packages.gz
+ 25310da0311d08b63dae1adcad942b32 147 main/binary-amd64/Release
+SHA1:
+ 206e4c78b39689ee0c2ce93dff4b265864bf97d9 622 main/binary-amd64/Packages
+ c77cfceb5e8957cd0bfa642ae9729e642e9451e0 443 main/binary-amd64/Packages.gz
+ 7866c0a50ce266da529c52084c08bebda99f6ce3 147 main/binary-amd64/Release
+SHA256:
+ cb01fb488d4f622550ed3ca9b16399ee57c11133aef078bf5a1033c7cf59f332 622 main/binary-amd64/Packages
+ f014942e0316cf8286f111fa7bbf037cc30eb5ad43e17cf0fba1d9fc0da605b0 443 main/binary-amd64/Packages.gz
+ d6cf3c3025aa4c476fb2e708b1b1084532c57cd7f8ab46fc857c058c93b76f82 147 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE6JGNnqGUx88mHybgu5/68lm6sC4FAmqLVcYACgkQu5/68lm6
+sC7o2w//dQjtlRA90B9M08rSZxlVa9JOEs/Cg0e96tvdNKfjk2cZUmgus8KlZnVC
+Y1t18W5e/5U9CBievwZSMH3FtfC3at5A28zMWPTsQTMJUAavQZ0JlJtQbRcm85OU
+CFBmMp1ieYqMFewH3SUfOpvscJFhaXV/3u34PSTL3Kw3eqXEkfuwoI2fgektk6Ya
+WfNclnyWuDbpt6K+usPHbz1FvAKprq05TtqoOK4lYLKyiv2uP9ko+1yrMmzg8H/W
+UzKEwYTvIamlthifTPfSVni/TOND1c4Rje5nfo/4meiHLrZ9O4HqR/SevoFTI+d9
+Ka/83qJpXQgh9552fMZ8rA0gJWR3+WVIwjda11i3EuXMzkMgTpCqc92c9937DdQy
+pJqKpGTJO98Nfkc8yLGY/PjGL4NR/xris5wTIV9E2illva4j32qjsiUbAzrGdu6F
+qljev1CcDt2ZVh/QNmUErZD9Xa0hoGL+M5VFgH03XlWA22zWXywqS7iNiIY7Zea2
+b0zSGWW1APu+9T3vzuQZEwgonMAxD6XwjBEdisiwsrW9F0tNVgysHX1PDcooBj0p
+FIEVjaLY1zcCCpzB1AfRynRbLDua/WWqDbhhZtEAfbU9g5G/KznGSzrHFrKsvVIN
+j/GLCKJmUrAquQP5Spv35sIAiljJ9/NICh5iR0rGWGAsFoD8gTA=
+=04QK
+-----END PGP SIGNATURE-----
