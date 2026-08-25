@@ -109,6 +109,44 @@ else
 fi
 
 
+echo "==> Checking GitHub SSH access..."
+
+SSH_KEY="$HOME/.ssh/id_ed25519"
+SSH_PUB="$SSH_KEY.pub"
+
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+
+if [[ ! -f "$SSH_KEY" ]]; then
+    echo "No GitHub SSH key found. Creating one..."
+    ssh-keygen -t ed25519 -f "$SSH_KEY" -N "" -C "$(whoami)@$(hostname)"
+fi
+
+chmod 600 "$SSH_KEY"
+chmod 644 "$SSH_PUB"
+
+if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 \
+    | grep -q "successfully authenticated"; then
+
+    echo
+    echo "GitHub SSH authentication is not configured for this machine."
+    echo "Add this public key to your GitHub account:"
+    echo
+    cat "$SSH_PUB"
+    echo
+    echo "Then press Enter to retry."
+    read -r
+
+    if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 \
+        | grep -q "successfully authenticated"; then
+        echo "GitHub SSH authentication still failed."
+        echo "Aborting before cloning private dotfiles."
+        exit 1
+    fi
+fi
+
+echo "GitHub SSH authentication is working."
+
 echo "==> Configuring personal dotfiles..."
 
 DOTFILES_DIR="$HOME/dotfiles"
