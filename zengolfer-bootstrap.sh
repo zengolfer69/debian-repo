@@ -112,7 +112,7 @@ fi
 echo "==> Configuring personal dotfiles..."
 
 DOTFILES_DIR="$HOME/dotfiles"
-DOTFILES_REPO="https://github.com/zengolfer69/dotfiles.git"
+DOTFILES_REPO="git@github.com:zengolfer69/dotfiles.git"
 
 if [[ ! -d "$DOTFILES_DIR/.git" ]]; then
     git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
