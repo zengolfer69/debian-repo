@@ -18,8 +18,51 @@ sudo apt install -y \
     rsync \
     ca-certificates \
     gnupg \
-    conky-all
+    conky-all \
+    build-essential \
+    devscripts \
+    debhelper \
+    dh-make \
+    fakeroot \
+    lintian \
+    dpkg-dev \
+    equivs \
+    quilt \
+    git-buildpackage \
+    pristine-tar \
+    pkg-config \
+    autoconf \
+    automake \
+    libtool \
+    cmake \
+    meson \
+    ninja-build \
+    make \
+    gcc \
+    g++ \
+    clang \
+    gdb \
+    strace \
+    ltrace \
+    checkinstall \
+    libssl-dev \
+    libncurses-dev \
+    libreadline-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libffi-dev \
+    libsqlite3-dev \
+    libxml2-dev \
+    libgtk-3-dev \
+    libgtk-4-dev \
+    libadwaita-1-dev
 
+A
+    libxslt1-dev
+
+
+    apt-file
 echo "==> Enabling SSH service..."
 sudo systemctl enable --now ssh
 
@@ -125,9 +168,9 @@ fi
 chmod 600 "$SSH_KEY"
 chmod 644 "$SSH_PUB"
 
-if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 \
-    | grep -q "successfully authenticated"; then
+SSH_TEST="$(ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 || true)"
 
+if ! grep -q "successfully authenticated" <<< "$SSH_TEST"; then
     echo
     echo "GitHub SSH authentication is not configured for this machine."
     echo "Add this public key to your GitHub account:"
@@ -137,8 +180,9 @@ if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 
     echo "Then press Enter to retry."
     read -r
 
-    if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 \
-        | grep -q "successfully authenticated"; then
+    SSH_TEST="$(ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 || true)"
+
+    if ! grep -q "successfully authenticated" <<< "$SSH_TEST"; then
         echo "GitHub SSH authentication still failed."
         echo "Aborting before cloning private dotfiles."
         exit 1
@@ -146,7 +190,6 @@ if ! ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 
 fi
 
 echo "GitHub SSH authentication is working."
-
 echo "==> Configuring personal dotfiles..."
 
 DOTFILES_DIR="$HOME/dotfiles"
