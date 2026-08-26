@@ -10,6 +10,7 @@ sudo apt install -y \
     openssh-client \
     openssh-server \
     screen \
+    neofetch \
     zsh \
     ddate \
     git \
@@ -56,10 +57,8 @@ sudo apt install -y \
     libxml2-dev \
     libgtk-3-dev \
     libgtk-4-dev \
-    libadwaita-1-dev
-
-A
-    libxslt1-dev
+    libadwaita-1-dev \
+    libxslt1-dev \
 
 
     apt-file
@@ -138,6 +137,17 @@ else
     git -C "$OMZ_DIR" pull --ff-only
 fi
 
+echo "==> Configuring Conky HUD..."
+
+mkdir -p "$HOME/.config/conky"
+
+ln -sfn \
+    "$DOTFILES_DIR/.config/conky/hud.conf" \
+    "$HOME/.config/conky/hud.conf"
+
+ln -sfn \
+    "$HOME/.config/conky/hud.conf" \
+    "$HOME/.conkyrc"
 
 echo "==> Installing/updating Powerlevel10k..."
 
