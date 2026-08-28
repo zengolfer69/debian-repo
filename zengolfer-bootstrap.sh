@@ -226,6 +226,15 @@ backup_and_link() {
 
 backup_and_link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 backup_and_link "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
+echo "==> Configuring Conky HUD..."
+
+mkdir -p "$HOME/.config/conky"
+cp "$DOTFILES_DIR/.config/conky/conky.conf" \
+   "$HOME/.config/conky/conky.conf"
+
+ln -sfn \
+   "$HOME/.config/conky/conky.conf" \
+   "$HOME/.conkyrc"
 
 
 echo "==> Setting zsh as the login shell..."
