@@ -62,7 +62,7 @@ sudo apt install -y \
     apt-file 
 
 echo "==> Updating apt-file database..."
-sudo spt-file update
+sudo apt-file update
 
 
 echo "==> Configuring zengolfer APT repository..."
@@ -136,7 +136,6 @@ else
     git -C "$OMZ_DIR" pull --ff-only
 fi
 
-    "$HOME/.conkyrc"
 
 echo "==> Installing/updating Powerlevel10k..."
 
