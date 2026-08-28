@@ -59,11 +59,10 @@ sudo apt install -y \
     libgtk-4-dev \
     libadwaita-1-dev \
     libxslt1-dev \
+    apt-file 
 
-
-    apt-file
-echo "==> Enabling SSH service..."
-sudo systemctl enable --now ssh
+echo "==> Updating apt-file database..."
+sudo spt-file update
 
 
 echo "==> Configuring zengolfer APT repository..."
@@ -137,16 +136,6 @@ else
     git -C "$OMZ_DIR" pull --ff-only
 fi
 
-echo "==> Configuring Conky HUD..."
-
-mkdir -p "$HOME/.config/conky"
-
-ln -sfn \
-    "$DOTFILES_DIR/.config/conky/hud.conf" \
-    "$HOME/.config/conky/hud.conf"
-
-ln -sfn \
-    "$HOME/.config/conky/hud.conf" \
     "$HOME/.conkyrc"
 
 echo "==> Installing/updating Powerlevel10k..."
